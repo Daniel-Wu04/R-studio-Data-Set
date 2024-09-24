@@ -1,0 +1,27 @@
+getwd()
+setwd("C:/Users/2022w/Desktop/R Projects/")
+df <- read.csv("StudentPerformanceFactors.csv")
+
+grades <- table(df$Exam_Score)
+table(df$Exam_Score, df$Access_to_Resources)
+table(df$Exam_Score, df$Distance_from_Home)
+tapply(df[df$Motivation_Level == "Low",]$Exam_Score, df[df$Motivation_Level =="Low",]$Hours_Studied, mean)
+tapply(df[df$Motivation_Level == "Medium",]$Exam_Score, df[df$Motivation_Level =="Medium",]$Hours_Studied, mean)
+tapply(df[df$Motivation_Level == "High",]$Exam_Score, df[df$Motivation_Level =="High",]$Hours_Studied, mean)
+
+tapply(df$Exam_Score, df$Parental_Education_Level, mean)
+tapply(df$Exam_Score, df$Distance_from_Home, mean)
+tapply(df$Exam_Score, df$Attendance, mean)
+tapply(df$Attendance, df$Distance_from_Home, mean)
+tapply(df$Hours_Studied, df$Motivation_Level, max)
+tapply(df$Exam_Score, df$Motivation_Level, mean)
+score <- table (df$Exam_Score)
+table(df$Exam_Score, df$Attendance)
+tapply(df$Exam_Score, df$ Tutoring_Sessions, max)
+tapply(df$Exam_Score, df$Previous_Scores, sd)
+  
+tapply(df[df$Motivation_Level == "Low",]$Exam_Sc    ore, df[df$Motivation_Level =="Low",]$Previous_Scores, sd)
+tapply(df$Attendance, df$School_Type, mean)
+
+exam <- table(df$Exam_Score)
+table(df$Exam_Score, df$ Attendance)
